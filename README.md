@@ -1,7 +1,5 @@
 # Complaint Box - Smart Complaint Management System
-
 ![complaint box](images/image.png)
-
 A smart, voice-enabled complaint management system built with Python and Streamlit. Clients can register complaints with voice assistance, and managers can track, manage, and resolve complaints through a dedicated dashboard.
 
 ---
@@ -64,14 +62,12 @@ cd complaint-box
 python -m venv basev
 ```
 
-Activate karo:
-
-- Windows:
+Activate on Windows:
 ```bash
 basev\Scripts\activate
 ```
 
-- Mac/Linux:
+Activate on Mac/Linux:
 ```bash
 source basev/bin/activate
 ```
@@ -83,7 +79,7 @@ pip install -r requirements.txt
 
 ### 4. Setup environment variables
 
-`.env` file banao root folder mein aur yeh fill karo:
+Create a `.env` file in the root folder and fill in the following:
 ```
 ELEVENLABS_API_KEY=your_elevenlabs_api_key
 EMAIL_USER=your_gmail@gmail.com
@@ -96,18 +92,18 @@ TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
 MANAGER_WHATSAPP=whatsapp:+91xxxxxxxxxx
 ```
 
-> Note: Gmail App Password ke liye Google Account Settings mein jakar 2-Step Verification ON karo aur App Password generate karo.
+> For Gmail App Password: Go to Google Account Settings, enable 2-Step Verification, then generate an App Password.
 
-> Note: Twilio WhatsApp ke liye sandbox join karna hoga. Apne phone se Twilio sandbox number pe WhatsApp karo: `join <your-sandbox-keyword>`
+> For Twilio WhatsApp: You need to join the sandbox first. Send a WhatsApp message from your phone to the Twilio sandbox number: `join <your-sandbox-keyword>`
 
-### 5. Run setup file (sirf ek baar)
+### 5. Run setup file (only once)
 ```bash
 python setup.py
 ```
 
-Yeh manager account aur database tables create karega.
+This will create the database tables and manager account.
 
-### 6. Run the app
+### 6. Run the application
 ```bash
 streamlit run app.py
 ```
@@ -117,18 +113,18 @@ streamlit run app.py
 ## Usage
 
 ### Client
-1. App kholo
-2. Register tab mein naya account banao
-3. Login karo
-4. Voice guided flow follow karo
-5. Complaint submit karo with house number and phone number
+1. Open the app
+2. Go to Register tab and create a new account
+3. Login with your credentials
+4. Follow the voice guided complaint submission flow
+5. Submit your complaint with house number and phone number
 
 ### Manager
-1. Login karo manager credentials se
-2. Dashboard mein saari complaints dekho
-3. Unsolved tab mein pending complaints dekho
-4. Mark Solved button dabao complaint resolve hone par
-5. Solved tab mein CSV download karo
+1. Login with manager credentials
+2. View all complaints on the dashboard
+3. Check pending complaints in the Unsolved tab
+4. Click Mark Solved when a complaint is resolved
+5. Download solved complaints as CSV from the Solved tab
 
 ---
 
@@ -136,10 +132,10 @@ streamlit run app.py
 
 | Variable | Description |
 |----------|-------------|
-| ELEVENLABS_API_KEY | ElevenLabs API key for voice |
-| EMAIL_USER | Gmail address for sending emails |
+| ELEVENLABS_API_KEY | ElevenLabs API key for voice generation |
+| EMAIL_USER | Gmail address used for sending emails |
 | EMAIL_PASS | Gmail App Password (16 digits) |
-| OWNER_EMAIL | Manager email to receive complaints |
+| OWNER_EMAIL | Manager email to receive complaint notifications |
 | MANAGER_EMAIL | Manager email for dashboard alerts |
 | TWILIO_ACCOUNT_SID | Twilio Account SID |
 | TWILIO_AUTH_TOKEN | Twilio Auth Token |
@@ -150,10 +146,10 @@ streamlit run app.py
 
 ## Important Notes
 
-- `.env` file kabhi bhi GitHub pe push mat karo — sensitive credentials hain
-- `complaintbox.db` file bhi push mat karo — `.gitignore` mein already add hai
-- `basev/` virtual environment folder bhi push mat karo
-- `setup.py` sirf ek baar run karna hai — baar baar mat chalao
+- Never push the `.env` file to GitHub as it contains sensitive credentials
+- The `complaintbox.db` file is excluded from Git via `.gitignore`
+- The `basev/` virtual environment folder should not be pushed to GitHub
+- Run `setup.py` only once during initial setup
 
 ---
 
