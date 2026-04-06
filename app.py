@@ -66,7 +66,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Tabs
-tab1, tab2 = st.tabs(["🔐 Login", "📝 Register"])
+tab1, tab2 = st.tabs([" Login", " Register"])
 
 # ---- LOGIN TAB ----
 with tab1:
@@ -85,9 +85,9 @@ with tab1:
                 st.session_state["username"] = username
                 st.switch_page("pages/client_page.py")
             else:
-                st.error("❌ No account found!")
+                st.error(" No account found!")
         else:
-            st.warning("⚠️ Username aur Password dono bharo!")
+            st.warning(" Username aur Password dono bharo!")
 
 # ---- REGISTER TAB ----
 with tab2:
